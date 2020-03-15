@@ -20,7 +20,7 @@ public class DisplayLink: NSObject
     private weak var _delegate : DisplayLinkDelegate?
     
     //MARK: - Computed Properties
-    static var notificationName: Notification.Name
+    public static var notificationName: Notification.Name
     {
         return DisplayLinkObserverController.notificationName
     }

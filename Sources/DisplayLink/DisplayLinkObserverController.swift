@@ -19,7 +19,7 @@ internal final class DisplayLinkObserverController: NSObject
     private weak var _delegate : DisplayLinkObserverControllerDelegate!
     
     //MARK: - Public Properties
-    public static let notificationName = NSNotification.Name(rawValue: "DisplayLinkObserverDidTick")
+    internal static let notificationName = NSNotification.Name(rawValue: "DisplayLinkObserverDidTick")
     
     internal var tickType: TickType = .perFrame
     {
