@@ -32,7 +32,7 @@ internal final class DisplayLinkObserver: NSObject
     //MARK: - Initializer
     internal init(delegate : DisplayLinkObserverDelegate, tickType: TickType)
     {
-        self.tickType         = tickType
+        self.tickType          = tickType
         self.tickerTimestamp   = CFTimeInterval(0.0)
         self.displayLinkTicker = nil
         super.init()
