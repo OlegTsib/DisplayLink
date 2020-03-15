@@ -17,7 +17,7 @@ public enum DisplayLinkTimerFinishType
 public protocol DisplayLinkTimerDelegate: class
 {
     func timerDidFinish(with type: DisplayLinkTimerFinishType)
-    func timerTick(counter: Double)
+    func timerTick(counter: Double, timer: DisplayLinkTimer)
 }
 
 public class DisplayLinkTimer: NSObject
@@ -203,10 +203,10 @@ extension DisplayLinkTimer
 //MARK: - DisplayLinkDelegate
 extension DisplayLinkTimer: DisplayLinkDelegate
 {
-    public func tick()
+    public func tick(displayLink: DisplayLink)
     {
         handelTickWithDisplayLinkObserver()
-        _delegate?.timerTick(counter: counter)
+        _delegate?.timerTick(counter: counter, timer: self)
     }
 }
 

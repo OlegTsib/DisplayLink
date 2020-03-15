@@ -10,7 +10,7 @@ import Foundation
 
 public protocol DisplayLinkDelegate: AnyObject
 {
-    func tick()
+    func tick(displayLink: DisplayLink)
 }
 
 public class DisplayLink: NSObject
@@ -61,6 +61,6 @@ extension DisplayLink: DisplayLinkObserverControllerDelegate
 {
     func tick()
     {
-        _delegate?.tick()
+        _delegate?.tick(displayLink: self)
     }
 }
