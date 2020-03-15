@@ -34,7 +34,7 @@ public class DisplayLink: NSObject
     }
     
     //MARK: - Initializer
-    init(tickType: TickType, delegate: DisplayLinkDelegate?)
+    public init(tickType: TickType, delegate: DisplayLinkDelegate?)
     {
         super.init()
         _controller = DisplayLinkObserverController(tickType: tickType, delegate: self)
