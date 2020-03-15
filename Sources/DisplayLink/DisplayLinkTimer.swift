@@ -30,14 +30,12 @@ public class DisplayLinkTimer: NSObject
     weak private var _delegate : DisplayLinkTimerDelegate?
     private var _displayLink   : DisplayLink!
     private var _timerRun      : Bool
+    private var _tickType      : TickType
     
     //MARK: - Public Properties
     public private(set) var timerIsOn : Bool
     public private(set) var infinite  : Bool
     public private(set) var timer     : Double
-    
-    //MARK: - Computed Properties
-    var tickType: TickType = .delay(seconds: 1)
 
     //MARK: - Computed Properties
     private var counter : Double
@@ -67,10 +65,10 @@ public class DisplayLinkTimer: NSObject
         self._timerRun  = false
         self.timerIsOn  = false
         _delegate       = delegate
-        
+        _tickType       = .delay(seconds: 1)
         super.init()
         
-        _displayLink = DisplayLink(tickType: tickType, delegate: self)
+        _displayLink = DisplayLink(tickType: _tickType, delegate: self)
         notificationCenter.addObserver(self, selector: #selector(didEnterBackground(_:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(willEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
@@ -205,7 +203,7 @@ extension DisplayLinkTimer
 //MARK: - DisplayLinkDelegate
 extension DisplayLinkTimer: DisplayLinkDelegate
 {
-    func tick()
+    public func tick()
     {
         handelTickWithDisplayLinkObserver()
         _delegate?.timerTick(counter: counter)

@@ -5,10 +5,9 @@
 //  Created by Oleg Tsibulevskiy on 14/03/2020.
 //  Copyright © 2020 OTCode. All rights reserved.
 //
-
 import UIKit
 
-internal enum TickType
+public enum TickType
 {
     case perFrame
     case delay(seconds: Double)
