@@ -45,7 +45,7 @@ import DisplayLink
 <a name="displayLink"/>
 
 ## DisplayLink:
-Class representing a timer bound to the display
+Class representing a timer bound to the display.
 You can be notified changes per frame or configure notifier time by second or minutes by self
 ```swift
 let displayLink  = DisplayLink(tickType: .delay(seconds: 3), delegate: self)
@@ -60,7 +60,7 @@ displayLink2.startObservation()
 ```swift
 DisplayLink(tickType: .delay(seconds: 3), delegate: self)
 ```
-<h5>1. By delegate Notification Center :</h5>
+<h5>1. By Notification Center :</h5>
 
 ```swift
 NotificationCenter.default.addObserver(self,
