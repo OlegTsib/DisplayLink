@@ -3,7 +3,7 @@ DisplayLink
 </h1>
 <h3 align="center">Timer on base CADisplayLink</h3>
 <p align="center">
-<img alt="Version" src="https://img.shields.io/badge/version-1.0.4-green">
+<img alt="Version" src="https://img.shields.io/badge/version-1.0.5-green">
 <img alt="Author" src="https://img.shields.io/badge/author-Oleg%20Tsibulevskiy-blue.svg">
 <img alt="Swift" src="https://img.shields.io/badge/swift-5%2B-orange.svg">
 <img alt="Swift" src="https://img.shields.io/badge/platform-ios-lightgrey.svg">
